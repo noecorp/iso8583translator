@@ -1,0 +1,21 @@
+#!/bin/sh
+
+start_banelco() {
+    /usr/bin/twistd --syslog -y /usr/lib/python2.5/site-packages/iso8583translator/banelcoserver.tac 
+}
+
+stop_banelco() {
+    /usr/bin/killall twistd 
+}
+
+case $1 in
+  start)
+	start_banelco
+	;;
+  stop)
+	stop_banelco
+	;;
+esac
+
+
+
